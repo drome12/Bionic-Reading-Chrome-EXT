@@ -1,0 +1,25 @@
+{
+    "manifest_version" : 3,
+    "name" : "Read Bold",
+    "version": "1.0",
+    "permissions": ["activeTab", "scripting", "tabs"],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "48": "images/icon48.png",
+            "128": "images/icon128.png"
+        }
+        
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content_scripts/content.js"],
+            "css": ["content_scripts/content.css"]
+        }
+    ]
+}
+
